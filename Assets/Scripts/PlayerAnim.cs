@@ -16,16 +16,23 @@ public class PlayerAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        onMove();
-        onRun();
+        OnMove();
+        OnRun();
     }
 
     #region Movement
 
-    void onMove()
+    void OnMove()
     {
         if (player.direction.sqrMagnitude > 0)
-            anim.SetInteger("transition", 1);
+        {
+            if (player.isRolling)
+                anim.SetTrigger("isRolling");
+
+            else
+                anim.SetInteger("transition", 1);
+            
+        }
         else
             anim.SetInteger("transition", 0);
 
@@ -36,7 +43,7 @@ public class PlayerAnim : MonoBehaviour
             transform.eulerAngles = new Vector2(0, 180);
     }
 
-    void onRun()
+    void OnRun()
     {
         if (player.isRunning)
             anim.SetInteger("transition", 2);

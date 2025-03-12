@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private Vector2 _direction;
 
     private bool _isRunning;
+    private bool _isRolling;
 
     public Vector2 direction
     {
@@ -22,6 +23,12 @@ public class Player : MonoBehaviour
         set { _isRunning = value; }
     }
 
+    public bool isRolling
+    {
+        get { return _isRolling; }
+        set { _isRolling = value; }
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
@@ -32,29 +39,30 @@ public class Player : MonoBehaviour
     // captura inputs e algumas lógicas que não usem física
     private void Update()
     {
-        onInput();
-        onRun();
+        OnInput();
+        OnRun();
+        OnRolling();
     }
 
     // só utiliza lógicas com física
     private void FixedUpdate()
     {
-        onMove();
+        OnMove();
     }
 
     #region Movement
 
-    void onInput()
+    void OnInput()
     {
         _direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")); //vector2 pega o eixo x e eixo y
     }
 
-    void onMove()
+    void OnMove()
     {
         rig.MovePosition(rig.position + _direction * speed * Time.fixedDeltaTime);
     }
 
-    void onRun()
+    void OnRun()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -65,6 +73,19 @@ public class Player : MonoBehaviour
         {
             speed = initialSpeed;
             _isRunning = false;
+        }
+    }
+
+    void OnRolling()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            _isRolling = true;
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            _isRolling = false;
         }
     }
 
