@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,8 +8,8 @@ public class DialogueControl : MonoBehaviour
     [Header("Components")]
     public GameObject dialogueObj;
     public Image profileSprite;
-    public Text speechText; //texto da fala
-    public Text actorNameText;
+    public TextMeshProUGUI speechText; //texto da fala
+    public TextMeshProUGUI actorNameText;
 
     [Header("Settings")]
     public float typingSpeed;
@@ -16,6 +17,14 @@ public class DialogueControl : MonoBehaviour
     private bool isShowing;
     private int index;
     private string[] sentences;
+
+    public static DialogueControl instance;
+
+    // é chamado antes de todos os starts
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
