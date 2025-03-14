@@ -61,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -99,7 +99,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -347,7 +347,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      longhair_idle_strip9_0: -4738599279905183678
+      longhair_idle_strip9_1: 7087558793664773902
+      longhair_idle_strip9_2: -4392404102991742349
+      longhair_idle_strip9_3: -4923436068749977371
+      longhair_idle_strip9_4: 7644327390979351590
+      longhair_idle_strip9_5: -8618027356116927631
+      longhair_idle_strip9_6: -8895218424108590776
+      longhair_idle_strip9_7: 2802992116077106708
+      longhair_idle_strip9_8: -7643102064768494801
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
